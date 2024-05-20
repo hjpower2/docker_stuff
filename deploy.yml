@@ -1,0 +1,21 @@
+---
+- name: deploy NGINX container
+  hosts: localhost
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: pull image
+      docker_container:
+        name: nginx_img
+        source: pull
+
+    - name: run NGINX container
+      docker_container:
+        name: nginx_cont
+        image: nginx_img
+        state: started
+        ports:
+          - "80:80"
+        volumes:
+          - /var/log/nginx:/var/log/nginx
