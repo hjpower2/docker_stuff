@@ -4,6 +4,6 @@ services:
   nginx:
     image: nginx_img
     ports:
-      - "80:80"
+      - "707:80"
     volumes:
       - /var/log/nginx:/var/log/nginx
