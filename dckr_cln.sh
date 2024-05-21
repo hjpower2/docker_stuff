@@ -4,7 +4,6 @@
 
 RM_IMG()	{
 	IMG_NM="$1"
-	#IMG_ID=$(sudo docker inspect --format='{{.Id}}' "$IMG_NM" 2>/dev/null)
 	IMG_ID=$(sudo docker images | awk '/'"$IMG_NM"'/ {print $3}')
 	echo "IMG_ID is ${IMG_ID}"
 	if [ -n "${IMG_ID}" ]; then
