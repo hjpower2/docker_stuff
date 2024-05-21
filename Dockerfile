@@ -1,9 +1,8 @@
 FROM nginx
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY index.html /usr/share/nginx/html/
 
-EXPOSE 80
-
-VOLUME /var/log/nginx
+EXPOSE 800
+EXPOSE 999
 
 CMD ["nginx", "-g", "daemon off;"]
