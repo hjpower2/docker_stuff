@@ -1,7 +1,7 @@
 FROM nginx
 
-COPY index.html /usr/share/nginx/html/index.html
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx-html/index.html /usr/share/nginx/html/index.html
+COPY ./nginx-html/nginx.conf /etc/nginx/nginx.conf
 
 
 
